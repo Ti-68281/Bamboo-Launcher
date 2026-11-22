@@ -618,8 +618,8 @@ kbd {
   background: linear-gradient(180deg, rgba(8, 19, 13, 0.44), rgba(8, 18, 12, 0.26));
   backdrop-filter: blur(30px) saturate(1.1);
   transition:
-    width 0.42s cubic-bezier(0.22, 1, 0.36, 1),
-    padding 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.48s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   will-change: width;
   user-select: none;
@@ -722,7 +722,7 @@ kbd {
 .collapse-icon {
   display: grid;
   place-items: center;
-  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .collapse-icon.flipped {
@@ -730,18 +730,18 @@ kbd {
 }
 
 .sidebar.compact .sidebar-brand {
-  justify-content: center;
-  padding-bottom: 27px;
+  justify-content: flex-start;
+  padding-bottom: 18px;
 }
 
 .sidebar.compact .sidebar-collapse {
-  left: 50%;
-  right: auto;
-  top: auto;
-  bottom: 1px;
-  width: 21px;
-  height: 21px;
-  transform: translateX(-50%);
+  left: auto;
+  right: -6px;
+  top: 8px;
+  bottom: auto;
+  width: 20px;
+  height: 20px;
+  transform: none;
   background: rgba(8, 18, 12, 0.78);
   border: 1px solid var(--line);
   border-radius: 7px;
@@ -855,12 +855,12 @@ kbd {
 }
 
 .sidebar.compact .nav-item {
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
-  width: 48px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 12px;
   height: 44px;
 }
 
@@ -884,6 +884,10 @@ kbd {
   top: 13px;
   bottom: 13px;
   left: -1px;
+}
+
+.sidebar.compact .sidebar-account {
+  width: 100%;
 }
 
 .sidebar-bottom {
@@ -1016,7 +1020,7 @@ kbd {
 }
 
 .sidebar.compact .sidebar-account {
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
   padding: 7px;
 }

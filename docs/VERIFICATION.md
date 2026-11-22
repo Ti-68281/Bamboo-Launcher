@@ -197,7 +197,8 @@
 | 更新提示 UI | 模拟 `1.0.2` 时显示“可更新至 v1.0.2”、GitHub 来源、检查 / 下载按钮；toast 提供跳转（见 [update-available.png](screens/update-available.png)） |
 | 联系作者 | 设置页底部显示 `Ti68281@xbkjz.icu` 与 `xiaobao@xbkjz.cn`，点击复制并提示（见 [settings-contact.png](screens/settings-contact.png)） |
 | 自动检查开关 | 设置 → 自动检查更新，默认开启；关闭后启动不发起请求 |
-| GitHub 发布 | 源码提交 `435c446` 之后继续同步最终更新器；Release `v1.0.1` 资产 `Bamboo-Portable-1.0.1.zip`，SHA-256 `55852ed…11ddeb2` |
+| GitHub 发布 | 源码提交 `6f59e6d`；Release `v1.0.1` 资产 `Bamboo-Portable-1.0.1.zip`，SHA-256 `55852ed…11ddeb2` |
+| 最终产物更新检查 | 打包版返回 `source=github`、`latestVersion=1.0.1`、`available=false`，下载地址指向 GitHub Release 资产 |
 
 > 更新下载/安装未做端到端验证：仓库当前没有发布资产，且不能为了测试伪造线上 release。检查逻辑、更新 UI 与下载代码路径已分别验证。
 
