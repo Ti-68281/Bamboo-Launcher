@@ -56,7 +56,8 @@ Bamboo 是一款面向 Minecraft Java 版的桌面启动器：竹青毛玻璃界
 ### 自动更新
 
 - 启动器默认在启动后自动检查更新，可在「设置 → 关于 / 更新」中关闭。
-- 依次查询 [GitHub Releases](https://github.com/Ti-68281/Bamboo-Launcher/releases)、仓库 `main` 分支的 `package.json`，以及官网 `version.json` / `update.json`（不存在时解析下载页版本）。
+- 依次查询 [GitHub Releases](https://github.com/Ti-68281/Bamboo-Launcher/releases)、仓库 `main` 分支的 `package.json`，以及官网 `version.json` / `update.json`（不存在时解析下载页版本）。更新检查使用 Electron 的 `net.fetch`，兼容系统代理。
+- 当前已发布 [v1.0.1](https://github.com/Ti-68281/Bamboo-Launcher/releases/tag/v1.0.1)。
 - 发现新版本后会在设置页显示版本号与来源；若发布资产包含 Windows `.exe` / `.zip`，可直接下载到数据目录的 `cache/updates`。
 - 下载完成后需要在关闭 Bamboo 的情况下运行安装包或替换便携版文件，启动器不会静默覆盖正在运行的自身文件。
 

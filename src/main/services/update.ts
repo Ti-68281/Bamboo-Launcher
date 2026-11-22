@@ -3,7 +3,7 @@ import { createWriteStream } from 'node:fs'
 import path from 'node:path'
 import { Readable, Transform } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
-import { app, shell } from 'electron'
+import { app, net, shell } from 'electron'
 import type { JobProgress, UpdateInfo } from '../../shared/types'
 import type { AppStore } from '../store'
 import { JobManager } from '../jobs'
@@ -171,7 +171,7 @@ export class UpdateService {
   }
 
   private async fetchGithubRelease(): Promise<GithubRelease | null> {
-    const response = await fetch(`${GITHUB_API}/releases/latest`, {
+    const response = await net.fetch(`${GITHUB_API}/releases/latest`, {
       headers: {
         Accept: 'application/vnd.github+json',
         'User-Agent': 'Bamboo-Launcher',
@@ -187,7 +187,7 @@ export class UpdateService {
   private async fetchWebsiteVersion(): Promise<UpdateInfo | null> {
     for (const endpoint of [`${WEBSITE}/version.json`, `${WEBSITE}/update.json`]) {
       try {
-        const response = await fetch(endpoint, {
+        const response = await net.fetch(endpoint, {
           headers: { 'User-Agent': 'Bamboo-Launcher' },
           signal: AbortSignal.timeout(10000),
         })
@@ -215,7 +215,7 @@ export class UpdateService {
     }
 
     try {
-      const response = await fetch(WEBSITE, {
+      const response = await net.fetch(WEBSITE, {
         headers: { 'User-Agent': 'Bamboo-Launcher' },
         signal: AbortSignal.timeout(10000),
       })
@@ -242,7 +242,7 @@ export class UpdateService {
   }
 
   private async fetchRepositoryVersion(): Promise<UpdateInfo | null> {
-    const response = await fetch(
+    const response = await net.fetch(
       `https://raw.githubusercontent.com/${GITHUB_REPO}/main/package.json`,
       {
         headers: { 'User-Agent': 'Bamboo-Launcher' },
@@ -277,7 +277,7 @@ export class UpdateService {
       await fs.mkdir(path.dirname(destination), { recursive: true })
       const temp = destination + '.part'
       context.report(0, '连接更新服务器…', { indeterminate: true })
-      const response = await fetch(info.downloadUrl!, {
+      const response = await net.fetch(info.downloadUrl!, {
         headers: { 'User-Agent': 'Bamboo-Launcher', Accept: 'application/octet-stream' },
       })
       if (!response.ok || !response.body) throw new Error(`下载失败：HTTP ${response.status}`)
