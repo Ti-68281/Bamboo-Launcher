@@ -1,0 +1,6 @@
+allowBuilds:
+  electron: true
+  esbuild: true
+  electron-winstaller: true
+overrides:
+  undici: 6.0.1
