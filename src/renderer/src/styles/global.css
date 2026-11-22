@@ -618,15 +618,15 @@ kbd {
   background: linear-gradient(180deg, rgba(8, 19, 13, 0.44), rgba(8, 18, 12, 0.26));
   backdrop-filter: blur(30px) saturate(1.1);
   transition:
-    width 0.48s cubic-bezier(0.4, 0, 0.2, 1),
-    padding 0.48s cubic-bezier(0.4, 0, 0.2, 1);
+    width 0.52s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.52s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
   will-change: width;
   user-select: none;
 }
 
 .sidebar.compact {
-  width: 80px;
+  width: 88px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -638,6 +638,9 @@ kbd {
   min-height: 42px;
   padding: 0 4px 20px;
   position: relative;
+  transition:
+    gap 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.52s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .brand-mark {
@@ -672,9 +675,9 @@ kbd {
   overflow: hidden;
   white-space: nowrap;
   transition:
-    max-width 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.2s ease,
-    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+    max-width 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.22s ease,
+    transform 0.44s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar.compact .brand-type {
@@ -701,17 +704,21 @@ kbd {
 }
 
 .sidebar-collapse {
-  position: absolute;
-  right: 0;
-  top: 8px;
+  position: relative;
   z-index: 2;
+  flex: 0 0 auto;
+  margin-left: auto;
   width: 25px;
   height: 25px;
   border-radius: 8px;
   color: var(--faint);
   display: grid;
   place-items: center;
-  transition: color 0.2s ease, background 0.2s ease;
+  transition:
+    width 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
 .sidebar-collapse:hover {
@@ -731,20 +738,23 @@ kbd {
 
 .sidebar.compact .sidebar-brand {
   justify-content: flex-start;
+  gap: 0;
+  padding-left: 8px;
   padding-bottom: 18px;
 }
 
 .sidebar.compact .sidebar-collapse {
-  left: auto;
-  right: -6px;
-  top: 8px;
-  bottom: auto;
-  width: 20px;
-  height: 20px;
-  transform: none;
-  background: rgba(8, 18, 12, 0.78);
-  border: 1px solid var(--line);
-  border-radius: 7px;
+  width: 18px;
+  height: 25px;
+  margin-left: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 6px;
+}
+
+.sidebar.compact .sidebar-collapse svg {
+  width: 14px;
+  height: 14px;
 }
 
 .sidebar-nav {
@@ -780,8 +790,8 @@ kbd {
   transition:
     color 0.2s ease,
     background 0.2s ease,
-    gap 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-    padding 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+    gap 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.52s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-item:hover {
@@ -831,9 +841,9 @@ kbd {
   opacity: 1;
   transform: translateX(0);
   transition:
-    max-width 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.18s ease,
-    transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+    max-width 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.22s ease,
+    transform 0.44s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-active-leaf {
@@ -860,7 +870,7 @@ kbd {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  padding: 0 12px;
+  padding: 0 16px;
   height: 44px;
 }
 
@@ -912,7 +922,10 @@ kbd {
   border-radius: 14px;
   background: linear-gradient(145deg, rgba(31, 54, 38, 0.38), rgba(18, 33, 23, 0.26));
   border: 1px solid var(--line);
-  transition: all 0.2s var(--ease);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    padding 0.52s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar-account:hover {
@@ -941,8 +954,8 @@ kbd {
   overflow: hidden;
   white-space: nowrap;
   transition:
-    max-width 0.36s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.18s ease;
+    max-width 0.44s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.22s ease;
 }
 
 .sidebar.compact .sidebar-account-copy {
@@ -1002,8 +1015,6 @@ kbd {
 }
 
 .sidebar.compact .sidebar-footer {
-  max-height: 0;
-  padding-top: 0;
   opacity: 0;
 }
 
@@ -1022,11 +1033,11 @@ kbd {
 .sidebar.compact .sidebar-account {
   justify-content: flex-start;
   gap: 0;
-  padding: 7px;
+  padding: 9px 7px 9px 13px;
 }
 
 .sidebar.compact .sidebar-bottom {
-  gap: 5px;
+  gap: 8px;
 }
 
 .sidebar.compact .sidebar-nav {

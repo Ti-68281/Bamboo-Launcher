@@ -189,7 +189,7 @@
 
 | 检查 | 结果 |
 | --- | --- |
-| 侧栏展开 / 收起 | 宽度从 232px 平滑过渡到 80px；文字、品牌与账户信息独立淡出，无闪烁（见 [sidebar-compact.png](screens/sidebar-compact.png)） |
+| 侧栏展开 / 收起 | 宽度从 232px 平滑过渡到 88px；图标、Logo、头像保持同一水平轴，收起按钮随右边缘移动，文字独立淡出；无横向跳位（见 [sidebar-compact.png](screens/sidebar-compact.png)） |
 | 界面降噪 | 移除分组标签、英文 overline、页面重复说明；导航与页面标题缩短 |
 | 窗口控制 | 最小化 / 最大化 / 关闭图标加粗至 2.2–2.5px，按钮宽度 50px，增加悬停反馈与原生 tooltip |
 | 启动进度 | 竹节进度条 + 浮叶 + 检查 / 准备 / 启动三阶段；读取真实 job progress（3/18/46/82%） |
@@ -197,7 +197,7 @@
 | 更新提示 UI | 模拟 `1.0.2` 时显示“可更新至 v1.0.2”、GitHub 来源、检查 / 下载按钮；toast 提供跳转（见 [update-available.png](screens/update-available.png)） |
 | 联系作者 | 设置页底部显示 `Ti68281@xbkjz.icu` 与 `xiaobao@xbkjz.cn`，点击复制并提示（见 [settings-contact.png](screens/settings-contact.png)） |
 | 自动检查开关 | 设置 → 自动检查更新，默认开启；关闭后启动不发起请求 |
-| GitHub 发布 | 源码提交 `6f59e6d`；Release `v1.0.1` 资产 `Bamboo-Portable-1.0.1.zip`，SHA-256 `55852ed…11ddeb2` |
+| GitHub 发布 | 源码提交见 `main` 最新提交；Release `v1.0.1` 资产 `Bamboo-Portable-1.0.1.zip`，SHA-256 `1b76244…42e3f6f` |
 | 最终产物更新检查 | 打包版返回 `source=github`、`latestVersion=1.0.1`、`available=false`，下载地址指向 GitHub Release 资产 |
 
 > 更新下载/安装未做端到端验证：仓库当前没有发布资产，且不能为了测试伪造线上 release。检查逻辑、更新 UI 与下载代码路径已分别验证。
