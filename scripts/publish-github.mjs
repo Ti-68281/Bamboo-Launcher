@@ -29,12 +29,15 @@ const EXCLUDED_DIRS = new Set([
   'out',
   'release',
   'docs/evidence',
+  '.pack',
 ])
 const EXCLUDED_FILES = new Set([
   '.site-home.html',
   '.github-tree.json',
   '.github-device.json',
   '.github-token',
+  '.curlrc-bamboo',
+  '.release-upload-url.txt',
 ])
 
 async function api(url, options = {}) {

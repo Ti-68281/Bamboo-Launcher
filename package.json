@@ -4,6 +4,7 @@
   "description": "Bamboo 竹启动器 — 简洁、通透、丝滑的 Minecraft Java 版启动器",
   "main": "./out/main/index.js",
   "author": "Ti68281",
+  "copyright": "Copyright © 2026 Ti68281",
   "license": "MIT",
   "private": true,
   "repository": {

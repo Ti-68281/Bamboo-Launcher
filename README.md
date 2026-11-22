@@ -266,6 +266,8 @@ pnpm dev
 
 官网：[bamboo.xbkjz.icu](https://bamboo.xbkjz.icu/) · GitHub：[Ti-68281/Bamboo-Launcher](https://github.com/Ti-68281/Bamboo-Launcher)
 
+© 2026 Ti68281
+
 ## 已知限制
 
 - Microsoft 登录、CurseForge 需要用户自己的凭据；这是上游平台的要求，不是缺少实现。

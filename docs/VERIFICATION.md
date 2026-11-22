@@ -161,6 +161,7 @@
 - `app.asar`：**2.57 MB**（依赖已打包进主进程）。
 - zip：**124.92 MB**，共 78 个文件。
 - `Bamboo.exe` 文件版本与产品版本均为 **1.0.1**。
+- 文件属性签名信息：`CompanyName=Ti68281`、`LegalCopyright=Copyright © 2026 Ti68281`、`OriginalFilename=Bamboo.exe`。这是可执行文件元数据，不等于 Authenticode 代码签名证书。
 - 打包版 `Bamboo.exe` 可启动，能读取真实账户与实例数据、加载真实 Modrinth 搜索结果，窗口标题 `Bamboo · 模组`。
 - 最终打包版在 **不设置 `BAMBOO_USER_DATA`** 的情况下也成功启动：
   - 本环境 `%APPDATA%\Bamboo` 不可写；

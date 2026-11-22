@@ -36,8 +36,15 @@ function Invoke-GitHub {
   Invoke-RestMethod @params
 }
 
-$excludedDirs = @('.git', '.tools', '.pnpm-store', 'node_modules', 'out', 'release', 'docs/evidence')
-$excludedFiles = @('.site-home.html', '.github-tree.json', '.github-device.json', '.github-token')
+$excludedDirs = @('.git', '.tools', '.pnpm-store', 'node_modules', 'out', 'release', 'docs/evidence', '.pack')
+$excludedFiles = @(
+  '.site-home.html',
+  '.github-tree.json',
+  '.github-device.json',
+  '.github-token',
+  '.curlrc-bamboo',
+  '.release-upload-url.txt'
+)
 
 function Should-Include([string]$relative) {
   $normalized = $relative -replace '\\', '/'
